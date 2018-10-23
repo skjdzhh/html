@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tianmao</title>
+    <style>
+        *{
+            margin:0px;
+        }
+        div{
+            width:100px;
+            height:100px;
+            /* 块元素，自己占一行，可以设置宽和高*/
+            /* display:block; */
+            /* 航元素 ，多个占一行，不可以设置宽和高*/
+            /* display:inline; */
+            /* 行级块元素 */
+            display:inline-block;
+        }
+        #div1{
+            background: red;
+            position: fix;
+            left: 30;
+            top:100
+        }
+         #div2{
+            background:blue;
+            position: relative;
+            left: 30px;
+            top:100px;
+        } 
+        /* postion:
+        relative 相对自己原来的位置，完了之后位置不回复
+        absolute 相当于最近已经定位的父元素
+        fix      固定定位 相对于浏览器的位置，定位后释放空间，不管滚动条怎么滚
+        static   默认，无设置定位，所有的都是自己原来的
+        */
+        #div3{
+            background:black;
+            left: 39;
+            top:100
+        }
+    </style>
+</head>
+
+
+
+
+
+<!-- strong:加粗 b:加粗有重点的意思
+display:block 块级元素 ：div h1~h6 -->
+
+
+
+
+
+
+
+
+
+
+<body><div>
+    <div id="div1">
+        111111111111111111
+    </div>div id="div2">
+        2222222
+    </div><div id="div3">
+      3234243224324  
+    </div>
+    </div>
+</body>
+</html>

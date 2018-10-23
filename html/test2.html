@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- 声明文档类型 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度</title>
+</head>
+<form action="第一个表单">
+<body style="height:3000px;">
+    <h1>11</h1>
+    <p>段落</p>
+    <!-- target="_blank"表示跳转了页面，但是当前的页面仍然在浏览器存在 -->
+    <a href="http://www.baidu.com" target="_blank" >百度</a> 
+    <!-- 当图片显示不成功时显示图片图片字样 -->
+    <img src="aaa/ming.jpg" title="这是一张图片" alt="图片图片">
+    <!-- ul表示圆点列表，li表示列表中的每一项 -->
+    <ul>
+        <li>第一行</li>
+        <li>第二行</li>
+        <li>第三行</li>
+
+    </ul>
+    <!-- ol表示数字列表 -->
+    <ol>
+        <!-- li所有的属性为这一行的属性，而不是字体的属性 -->
+        <li style="color:red; width:40px; height:100px;" >diyihang</li>
+        <li>dierhang</li>
+        <li>disanhang</li>
+    </ol>
+    <!-- 区块 用来布局 div+css -->
+    <div>
+        我是div1
+    </div>
+    <div>
+        我是div2 <span style="color:green">
+            唯创
+        </span>网讯666
+    </div>
+    <!-- span是可以和其他标签在一行的 -->
+    <span>
+        <strong>唯创</strong>网讯666
+        <!-- html中b标签表示加粗字体 -->
+        <b style="color:gold">唯创</b>网讯666
+    </span>
+    <br>
+    <span>
+        唯创网讯8888
+    </span>
+    <!--  table为表格标签 tr为行,td为列,th为每一个数据的表头 -->
+    <table>
+        <tr>
+            <td>11</td>
+            <td>22</td>
+            <td>33</td>
+
+        </tr>
+        <tr>
+            <td>qq</td>
+            <td>ww</td>
+            <td>rr</td>
+        </tr>   
+    </table>
+    <div> 
+        <!-- aa输入框的标签  lable input都为行标签-->
+        <!-- input为输入框 -->
+        <label for="aa">用户名</label>
+        <input id="aa" type="text">
+        <input  id="qq" type="text">
+    </div>
+    <!-- 单选框 -->
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
+    <!-- 复选框 -->
+    <input type="checkbox" name="hobby">足球
+    <input type="checkbox" name="hobby">篮球
+    <input type="checkbox" name="hobby">乒乓球
+    <!-- 下拉框 -->
+    <select name="lalala" id="la">
+        <option value="">16级</option>
+        <option value="">17级</option>
+        <option value="">19级</option>
+    </select>
+    <!-- 文本域 -->
+    <textarea name="" id="" cols="30" rows="10">
+            行级元素:  多个占一行  不能设置宽高
+            a  span  label  strong  b 
+            块级元素:  自己占一行  可以设置宽高
+            h1 p  ul li ol div table 
+
+            行级块元素:  img  input   
+    </textarea>
+    </form>
+    
+    <input type="submit" value="提交表单">
+    <button>提交</button>
+</body>
+</html>

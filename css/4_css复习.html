@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="test.css"> -->
+    <!-- 内部样式 -->
+    <style>
+        /* id选择器  唯一的 */
+        #aa{
+            background:pink;
+        }
+        .bb{
+            background: green;
+        }
+        /* 标签选择器 */
+        li{
+            color:red;
+            list-style: none;
+            background: purple;
+        }
+        /* 后代选择器 */
+        /* #cc li{
+            background: yellow;
+        } */
+        /* 子代选择器 */
+        #cc>li{
+            background: yellow;
+        }
+        /* 分组选择器 */
+        #aa,.bb{
+            color:orange;
+        }    
+        a:hover{
+            color:green;
+        }
+        ul{
+            list-style: none;
+        }
+        #dd{
+            height:500px;
+            /* background-color:green;
+            background-image: url(../ddd.jpg);
+            background-repeat: no-repeat;
+            background-position: 100px 200px; */
+            background: green url(../ddd.jpg) no-repeat 100px 200px;
+            /* 水平 */
+            text-align: center;
+            /* 垂直 */
+            line-height: 500px;
+            
+            
+
+
+
+        }
+
+
+        a{
+            text-decoration: none;
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight:700;
+            font-style: italic;
+
+            /* font: */
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="aa">
+        fysgdfiyugeyf
+    </div>
+    <ul>
+        <li class="bb">111</li>
+        <li>222</li>
+        <li class="bb">333</li>
+    </ul>
+    <ul id="cc">
+        <li>
+            111
+            <ul>
+                <li>a</li>
+                <li>b</li>
+            </ul>
+        </li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <a href="#">百度</a>
+
+    <div id="dd">fguygfuyrds</div>
+
+</body>
+</html>

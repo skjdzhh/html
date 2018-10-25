@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            /* 行级块元素，既能调宽高又能一行排列 */
+            /* display:block; */
+            /* 在布局当中也有一个优先级的问题 inline-block的优先级高于line的优先级 */
+            display: inline;
+            display: inline-block;
+        }
+        #div1{
+            background: #ff0000;
+        }
+        #div2{
+            background: #00ff00;
+        }
+        #div3{
+            background: #0000ff;
+        }
+        /* 
+            display:block  块级元素  自己占一行 可以设置宽高  
+                div h1-h6 p ul li ol table 
+            display: inline;  行级元素   多个占一行  不可以设置宽高
+                span a strong b 
+            display: inline-block; 行级块元素   既可以多个占一行  又可以设置宽高
+        */
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        111
+    </div><div id="div2">
+        222
+    </div><div id="div3">
+        333
+    </div>
+    <span>dfgdy</span>
+
+
+    
+</body>
+</html>

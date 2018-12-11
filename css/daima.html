@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            /* 解决塌陷问题 */
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            width: 80px;
+            height: 30px;
+            background: #ff0036;
+            margin-right:3px;
+        }
+        li.selected{
+            background: greenyellow;
+        }
+        #content div{
+            width: 269px;
+            height: 180px;
+            background: #cccccc;
+            display: none;
+        }
+        #content div.active{
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <ul id="container">
+        <ul id="btn-box">
+            <li class="selected">1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+        <div id="content">
+            <div  class="active">content1111</div>
+            <div>content2222</div>
+            <div>content3333</div>
+        </div>
+    </div>
+    <script>
+       
+       var aLi = document.getElementsByTagName('li');
+      //  var oContent = document.getElementById('content');
+        //var aDiv = oContent.getElementsByTagName('div');
+        for(var i=0; i<aLi.length; i++){   //页面加载的时候就会执行，给三个li都绑定点击事件 i++ 变成3
+          //  aLi[i].idx = i; //aLi[0].idx = 0 aLi[1].idx = 1 aLi[2].idx = 2;
+            aLi[i].onclick = function(){
+            //    for(var j=0; j<aLi.length; j++){ //清楚所有li的className 
+              //      aLi[j].className = "";
+                //}
+                this.className = "selected"; //给自己添加class = selected;
+                //aDiv[this.idx].className = "active";
+            }
+        }
+
+
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

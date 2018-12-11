@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+            /* perspective: 800px; */
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            margin:50px auto;
+            /*background: #ff0000;*/
+            position: relative;
+            /* -webkit-transform-style: preserve-3d; */
+            perspective: 800px;
+            /*-webkit-animation: run 2s linear infinite ;*/
+            transform-style: preserve-3d;
+            opacity: 0.5;
+            /* background: #999; */
+        }
+        #container div{
+            opacity: 0.5;
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #div1{
+             transform: rotateX(90deg) translateZ(100px) translateY(100px);
+             /* background: red; */
+             background: rebeccapurple;
+        }
+        #div2{
+            transform:  translateZ(100px);
+            background: red;
+            z-index:1;
+        }
+        #div3{
+            transform: rotateY(90deg) translateZ(100px);
+            background: blue;
+        }
+        #div4{
+            transform: rotateY(180deg) translateZ(100px);
+            background: orange;
+        }
+        #div5{
+            transform: rotateY(-90deg) translateZ(100px);
+            background: wheat;
+        }
+        #div6{
+            transform: rotateX(-90deg) translateZ(100px);
+            background: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="div1"></div>
+         <div id="div2"></div>
+       <!-- <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="div5"></div>
+        <div id="div6"></div> -->
+    </div>
+</body>
+</html>

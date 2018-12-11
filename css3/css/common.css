@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.banner{
+    display: block;
+    height: 80px;
+    background: #ff2f7c url(../../newtmall/img/banner.jpg) no-repeat center 0;
+    /* text-align: center; */
+}

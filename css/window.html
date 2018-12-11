@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+                /* 解决塌陷问题 */
+                overflow: hidden;
+            }
+            li{
+                float: left;
+                width: 80px;
+                height: 30px;
+                background: #ff0036;
+                margin-right:3px;
+            }
+            li.selected{
+                background: greenyellow;
+            }
+            #content div{
+                width: 269px;
+                height: 180px;
+                background: #cccccc;
+                display: none;
+            }
+            #content div.active{
+                display: block;
+            }
+        
+        </style>
+</head>
+<body>
+        <ul id="container">
+                <ul id="btn-box">
+                    <li class="selected">1111</li>
+                    <li>2222</li>
+                    <li>3333</li>
+                </ul>
+                <div id="content">
+                    <div  class="active">content1111</div>
+                    <div>content2222</div>
+                    <div>content3333</div>
+                </div>
+            </div>
+    <script>
+        var ali=document.getElementsByTagName('li');
+        var content=document.getElementById('content');
+        var adiv=content.getElementsByTagName('div');
+        for(var i=0;i<ali.length;i++){
+            ali[i].di=i;
+            ali[i].onclick=function(){
+                for(var j=0;j<ali.length;j++){
+                    ali[j].className="";      //清除所有li的class
+                } 
+                this.className="selected";
+                adiv[this.di].className="active";
+            }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

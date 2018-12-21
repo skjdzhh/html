@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>放大镜</title>
-    <style >
+    <style>
         *{
             padding: 0;
             margin: 0;
@@ -46,18 +46,18 @@
             position: relative;
         }
        #big-img{
-           position: absolute;
+           position: bsolute;
        }
     </style>
 </head>
 <body>
     <div id="small-box">
-        <img src="DOM/放大镜/1.jpg" alt="">
+        <img src="1.jpg" alt="">
         <!-- 可以直接进和自己平一级的文件或者文件夹 -->
         <span></span>
     </div>
     <div id="big-box">
-        <img src="DOM/放大镜/2.jpg" id="big-img" alt="">
+        <img id="big-img" src="2.jpg"  alt="">
     </div>
     
 </body>
@@ -65,38 +65,39 @@
     var oSmallBox = document.getElementById('small-box');
     var oBigBox = document.getElementById('big-box');
     var oSpan = document.getElementsByTagName('span')[0];
-    var oBigImg = document.getElementById('bog-img');
-    oSmallBox.ommouseover = function(){
+    var oBigImg = document.getElementById('big-img');
+    oSmallBox.onmouseover = function(){
         oSpan.style.display = "block";
         oBigBox.style.display = "block";
     }
     oSmallBox.onmousemove = function(e){
+        //把鼠标放在中央
         oSpan.style.left = e.clientX - oSpan.offsetHeight/2 +"px";
         oSpan.style.top = e.clientY - oSpan.offsetHeight/2 +"px";
         if(oSpan.offsetLeft<=0){
             oSpan.style.left = 0;
         }
         if(oSpan.offsetLeft >=oSmallBox.offsetWidth-oSpan.offsetWidth){
-            oSpan.style.left = oSmallBox.offsetWidth-oSpan.offsetWidth;
+            oSpan.style.left = oSmallBox.offsetWidth-oSpan.offsetWidth+"px";
         }
         if(oSpan.style.top<=0){
             oSpan.style.top = 0;
         }
         if(oSpan.offsetTop >= oSmallBox.offsetHeight-oSpan.offsetHeight){
-            oSpan.style.top = oSmallBox.offsetHeight-oSpan.offsetHeight;
+            oSpan.style.top = oSmallBox.offsetHeight-oSpan.offsetHeight+"px";
         }  
         //左边span  
-        var smallMax = oSmallBox.offsetWidth-oSpan.offsetHeight;
+        var smallMax = oSmallBox.offsetWidth-oSpan.offsetWidth;
         var smallMaxY = oSmallBox.offsetHeight-oSpan.offsetHeight;
         //右边大图可以走的最大距离
         var bigMax = oBigImg.offsetWidth-oBigBox.offsetWidth;
         var bigMaxY = oBigImg.offsetHeight-oBigBox.offsetHeight;
 
         var percent = oSpan.offsetLeft/smallMax;
-        var percentY = oSpan.offsetHeight/smallMaxY;
+        var percentY = oSpan.offsetTop/smallMaxY;
 
         oBigImg.style.left = -bigMax*percent +"px";
-        oBig.style.top = -bigMaxY*percentY+"px";
+        oBigImg.style.top = -bigMaxY*percentY+"px";
     }
     oSmallBox.onmouseout=function(){
         oSpan.style.display="none";

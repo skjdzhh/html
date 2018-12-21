@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>a</title>
+</head>
+<body>
+    当前页面是a
+    <button id="btn">click-back</button>
+    <script>
+        oBtn=document.getElementById('btn');
+    
+        histroy.foward();
+        oBtn.click=function(){
+            history.back();
+            
+            //histroy.forward();
+            //history.go(-1);     //返回上一个历史记录
+            //histroy.go(1);      //返回下一个历史记录
+
+        }
+    </script>
+    
+</body>
+</html>

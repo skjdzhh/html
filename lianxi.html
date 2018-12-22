@@ -4,104 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>放大镜</title>
-    <style >
+    <title>Document</title>
+    <style>
         *{
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
         ul{
             list-style: none;
-        }
-        #small-box{
-            /* 不浮动就没有办法达到最左边，既要达到1最左边，又不能释放空间 只有
-            position:relative;和float:left配合使用  */
-            position: relative;
-            float: left;            
-            /* 浮动需要关心的两个问题：
-                1、其到底是不是释放空间（浮动的元素是释放空间的，但是当浮动
-                和relative一起用于同一个元素时，这个元素是不释放空间的）
-                2、子元素浮动之后，父元素到底还有没有大小（当子元素浮动之后，
-                父元素一般情况之下是没有大小了的） */
-        }
-        /* 图片的宽和高都为400px */
-        span{
-            /* span其要相对于其父元素位置发生变化的 */
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 200px;
-            height: 200px;
-            background: rgba(255,255,255,0.5);
-            /* background: rgba(255,255,255,0.5); */
-            display: none;
-            /* background: ; */
-        }
-        #big-box{
-            float: left;
-            width: 400px;
-            height: 400px;
+            /* 解决塌陷问题 */
             overflow: hidden;
-            display: none;
-            position: relative;
         }
-       #big-img{
-           position: absolute;
-       }
+        li{
+            float: left;
+            width: 80px;
+            height: 30px;
+            background: #ff0036;
+            margin-right:3px;
+            cursor: pointer;
+        }
+        li.selected{
+            background: greenyellow;
+        }
+        #content div{
+            width: 269px;
+            height: 180px;
+            background: #cccccc;
+            display: none;
+        }
+        #content div.active{
+            display: block;
+        }
+    #ddd{
+        width: 800px;
+        background:red;
+    }
     </style>
 </head>
 <body>
-    <div id="small-box">
-        <img src="DOM/放大镜/1.jpg" alt="">
-        <!-- 可以直接进和自己平一级的文件或者文件夹 -->
-        <span></span>
+    <div id="container">
+        <ul id="btn-box">
+            <li class="selected">1111</li>
+            <li>2222</li>
+            <li>3333</li>
+            <div id="ddd">ghjhjhjk</div>
+        </ul>
+        <div id="content">
+            <div class="active">content1111</div>
+            <div>content2222</div>
+            <div>content3333</div>
+        </div>
     </div>
-    <div id="big-box">
-        <img src="DOM/放大镜/2.jpg" id="big-img" alt="">
-    </div>
+
+    <script>
+        // i = 3;   所以  aLi[i]  会返回undefined 
+        //this指对当前对象的引用  点击的是谁 this就是谁
+        var aLi = document.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+        for(var i=0; i<aLi.length; i++){   //页面加载的时候就会执行，给三个li都绑定点击事件 i++ 变成3
+            aLi[i].idx = i; //aLi[0].idx = 0 aLi[1].idx = 1 aLi[2].idx = 2;
+            aLi[i].onclick = function(){
+                for(var j=0; j<aLi.length; j++){ //清楚所有li的className 
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = "selected"; //给自己添加class = selected;
+                aDiv[this.idx].className = "active";
+            }
+        }
+
+// onmouseover 鼠标划入事件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+
+
+
+
+        
+
+    
+    
+    
+    
+    </script>
     
 </body>
-<script>
-    var oSmallBox = document.getElementById('small-box');
-    var oBigBox = document.getElementById('big-box');
-    var oSpan = document.getElementsByTagName('span')[0];
-    var oBigImg = document.getElementById('bog-img');
-    oSmallBox.ommouseover = function(){
-        oSpan.style.display = "block";
-        oBigBox.style.display = "block";
-    }
-    oSmallBox.onmousemove = function(e){
-        oSpan.style.left = e.clientX - oSpan.offsetHeight/2 +"px";
-        oSpan.style.top = e.clientY - oSpan.offsetHeight/2 +"px";
-        if(oSpan.offsetLeft<=0){
-            oSpan.style.left = 0;
-        }
-        if(oSpan.offsetLeft >=oSmallBox.offsetWidth-oSpan.offsetWidth){
-            oSpan.style.left = oSmallBox.offsetWidth-oSpan.offsetWidth;
-        }
-        if(oSpan.style.top<=0){
-            oSpan.style.top = 0;
-        }
-        if(oSpan.offsetTop >= oSmallBox.offsetHeight-oSpan.offsetHeight){
-            oSpan.style.top = oSmallBox.offsetHeight-oSpan.offsetHeight;
-        }  
-        //左边span  
-        var smallMax = oSmallBox.offsetWidth-oSpan.offsetHeight;
-        var smallMaxY = oSmallBox.offsetHeight-oSpan.offsetHeight;
-        //右边大图可以走的最大距离
-        var bigMax = oBigImg.offsetWidth-oBigBox.offsetWidth;
-        var bigMaxY = oBigImg.offsetHeight-oBigBox.offsetHeight;
-
-        var percent = oSpan.offsetLeft/smallMax;
-        var percentY = oSpan.offsetHeight/smallMaxY;
-
-        oBigImg.style.left = -bigMax*percent +"px";
-        oBig.style.top = -bigMaxY*percentY+"px";
-    }
-    oSmallBox.onmouseout=function(){
-        oSpan.style.display="none";
-        oBigBox.style.display="none";
-    }
-</script>
-
 </html>

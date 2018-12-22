@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        aaaaa
+        <p id="p1">
+            pppppp
+        </p>
+    </div>
+    <button id="btn">remove</button>
+    
+</body>
+<script>
+var oBtn = doocument.getElementById('btn');
+var oH1 = document.createElement('h1');
+oH1.innerHTML = "hahaha"
+var oDiv1 = document.getElementById('div1');
+oDiv1.appendChild(oH1);
+var oSpan = document.createElement('span');
+oSpan.innerHTML = "哈哈";
+oBtn.onclick = function(){
+    //有true为深克隆
+    var oDiv11 = oDiv.cloneNode(true);
+    document.body.appendChild(oDiv11);
+}
+
+
+
+
+
+</script>
+</html>

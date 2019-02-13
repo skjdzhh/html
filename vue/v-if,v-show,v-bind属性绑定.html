@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+            background: green;
+        }
+        .b{
+            color:red;
+        }
+    </style>
+</head> 
+<body>
+    <!-- **v-if的值是用data里面的数据构成的true或者false -->
+    <div id="app">
+        <!-- v-if是用来显示标签元素的 -->
+        <h2 v-if = "a">hahaha</h2>
+        <h2 v-else>hehehe</h2>
+    </br>
+        <h2 v-if = "b == 'x'">xxxxxxxxxxxx</h2>
+        <h2 v-else-if = "b=='e'">eeeeeeeee</h2>
+        <h2 v-else = "b=='s'">sssssssss</h2>
+    </br>
+        <h2 v-show = "c">hhhhhhh</h2>
+
+
+        <!-- 用bind绑定属性，属性值由data里面的变量确定 -->
+        <!-- 用bind绑定属性的时候，单个值的属性可以用bind这么绑定，而像class、style属性比较特殊 -->
+        <!-- title:title2 -->
+        <div id="div1" v-bind:title = "title"></div>
+        <!-- 简写方式      <div id="div1" :title = "title"></div>                                           -->
+        <!-- id:id02 -->
+        <div id="div2" v-bind:id = "id+'02'"></div>
+        <div id="div3"></div>
+        <!-- 其他属性都可以用v-bind绑定，他们都是单个值，但是class和style属性不是很好绑定 -->
+        <!-- 类属性的绑定 -->
+        <!-- a、方式一 对象的方式 -->
+        <div :class = "{a:isa,b:isb}">
+            gggggggggg
+        </div>
+        <!-- b、方式二 数组的方式-->
+        <div :class = "[classA,classB]">
+            hhhhhhhhhh
+        </div>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            // 前面是变量，后面是值
+            a:true,
+            b:"x",
+            c:true,
+            title:"title1",
+            id:"id",
+            // 布尔型常量不加引号，字符型和字符串型常量都加引号
+            isa:true,
+            isb:true,
+            classA:"a",
+            classB:"b",
+        }
+    })
+</script>
+</html>
+

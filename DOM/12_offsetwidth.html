@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 20px;
+            border:10px solid #000;
+            margin:30px;
+            position: absolute;
+        }
+        #div0{
+            width: 500px;
+            height: 500px;
+            background: #cccccc;
+            margin-left:200px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div0-1">
+            <div id="div1">
+            </div>
+        </div>
+    </div>
+   
+
+    <script>
+        var oDiv = document.getElementById('div1');
+        // oDiv.style.width只能取到内联样式的属性 可以设置css属性
+        // oDiv.offsetWidth 只能获取属性 不能设置属性 取到border+padding+Element 的宽度
+        // console.log( oDiv.style.width);
+        console.log( oDiv.offsetHeight );
+        // 相对于最近已定位的祖先元素, 如果没有相对于boby
+        console.log(oDiv.offsetLeft);
+        console.log(oDiv.offsetTop);
+        // 相对于最近已定位的祖先元素 
+        console.log(oDiv.offsetParent);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+    
+    
+    </script>
+
+
+
+    
+</body>
+</html>

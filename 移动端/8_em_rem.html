@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>8_em_rem</title>
+    <style>
+        html{
+            font-size: 30px;
+        }
+        #div1{
+            font-size: 2rem; 
+            /* 2rem: 60px*/
+            /*2em: 60px */
+            /* em:相对于父元素的字体大小 */
+            /* rem:相对于根元素的大小(html的font-size) */
+        }
+        #div2{
+            font-size: 2rem;
+            /* 2em:120px */
+            /* 2rem:60px */
+        }
+        #div3{
+            font-size: 3rem;
+            /*3em: 360px */
+            /* 3rem；90px */
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        哈哈
+        <div id="div2">
+            呵呵呵呵
+            <div id="div3">
+                嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻
+            </div>
+        </div>
+    </div>
+</body>
+</html>

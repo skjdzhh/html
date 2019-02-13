@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>17_节点</title>
+    <style>
+        #div1{
+            height: 300px;
+            width: 400px;
+        }
+    </style>
 </head>
+
 <body>
     <div id="div1">
-        <ul>
+        <!-- 这是注释 -->
+        <ul id="ul1">
             <li>111</li>
+            <li>222</li>
         </ul>
     </div>
     <div id="div2">
@@ -18,31 +27,172 @@
             div3333
         </div>
     </div>
+    <div class="divclass">1</div>
+    <div class="divclass">2</div>
+    <div class="divclass">3</div>
+    <div class="divclass">4</div>
+    <div name = "name1">这是一个有名字的div</div>
+    <p>p标签</p>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oDiv3 = document.getElementById('div3');
+        var oUl1 = document.getElementById('ul1');
+        var arr = document.getElementsByClassName('divclass');
+        var p = document.getElementsByTagName('p');
+        //var name = document.getElementByName('name1');
+        // var arr = document.getElementsByClassName('aa');
+        // var a1 = document.getElementsByTagName('p');
+        // var a2 = document.getElementsByName('username');
+        //console.log(arr[2]);
+
+
+
+        /* 节点     
+           
+ 
+             nodeType 节点类型 
+             元素节点  1         DIV P H1 H2 H3 H4 H5
+             属性节点  2         
+             文本节点  3         #text   
+
+             nodeName 
+
+         */       节点名字包括DIV等等
+
+        // console.log( oDiv.nodeType );
+        // console.log(oDiv2.firstChild.nodeType);
+        // console.log(oDiv2.innerHTML); 
+
+        // console.log( oDiv.nodeName );   //DIV
+        // console.log(oDiv2.firstChild.nodeName);  //#text
+
+        // 节点的遍历
+        /*
+        1.nextSibling     nextElementSibling(只返回标签元素节点)  dom3
+        2.previousSibling     previousElementSibling  dom3
+        3.firstChild  firstElementChild
+        4.lastChild   lastElementChild
+        5.children 
+        */
+        
+        // alert(oDiv1.nextSibling);
+        // oDiv1.nextSibling.style.background = "red";
+        
+        // nextSibling  封装next 返回下一个元素节点
+        function next(elem){
+            do{
+                elem = elem.nextSibling;
+            }while( elem && elem.nodeType != 1)
+            return elem;
+        }
+        var oDiv22 = next(oDiv1);
+        oDiv22.style.background = "red";
+        //console.log( next(oDiv3) );
+        
+        // var a = 5; 非0数字 非空字符串  null和undefined 都为无效值
+        // var x = null;
+        // if(x){  //有效值  非 null  非undefiend  false 
+        //     console.log('有效');
+        // }else{
+        //     console.log('无效');
+        // }
+
+        // console.log(oDiv2.previousElementSibling);
+
+        function prev(elem){
+            do{
+                elem = elem.previousSibling;
+            }while( elem && elem.nodeType != 1)
+            return elem;
+        }
+
+        
+        //console.log( prev(oDiv2));
+
+        function first(elem){
+            elem = elem.firstChild;
+            if(elem.nodeType == 1){
+                return elem;
+            }else{
+                return next(elem);
+            }
+        }
+        //console.log( first(oUl1)  );
+
+        //console.log(oUl1.children);
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+    
 </body>
-<script>
-var oDiv1 = document.getElementById('div1');
-var oDib2 = document.getElementById('div2');
-var oDiv3 = document.getElementById('div3');
-function next(elem){
-    do{
-        elem = elem.nextSibling;
-    }
-    while(elem && elem.nodeType!=1)
-    return elem;
-}
-function next(elem){
-    do{
-        elem = elem.nextSibling;
-    }
-    while(elem&&elem.nodeType !=1){
-        return elem;
-    }
-}
-var oDiv22 = next(oDiv1);
-// oDiv22.style.background = "red";
-oDiv22.style.background = "red";
-console.log(next(oDiv3));
-//节点的遍历
-//lastb- child
-</script>
 </html>

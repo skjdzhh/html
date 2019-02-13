@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 400px;
+            width: 400px;
+            background: red;
+            padding: 20px;
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">fhfksdfj</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+$("#div1").height(500);
+console.log($("#div1").height());         //内容高度
+console.log($("#div1").innerHeight());    //内容+padding
+console.log($("#div1").outerHeight());    //内容+padding+border
+</script>
+</html>

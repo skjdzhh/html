@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: .28rem;
+}
+li{list-style: none;}
+#nav-bar{
+    height: 1.01rem;
+    background: #06c1ae;
+    border-bottom: 1px solid #21897d;
+    display: flex;
+}
+#nav-bar .area{
+    width:1.67rem;
+    font-size: 0.32rem;
+    color: #fff;
+    height: 1.01rem;
+    line-height: 1.01rem;
+}
+#nav-bar .my{
+    width:0.94rem;
+    font-size: 0.32rem;
+}
+#nav-bar input{
+    /* -webkit-box-flex: 1; */
+    /* -ms-flex: 1; */
+    border-radius: .06rem;
+    background: rgba(0,0,0,.15);
+    height: .64rem;
+    line-height: .64rem;
+    /* -webkit-box-sizing: border-box; */
+    position: relative;
+    margin-top: .2rem;
+    flex:1;
+}
+.list .circle{
+    width:0.8rem;
+    height:.8rem;
+    /* background: #ff0036; */
+    display: block;
+    margin:0 auto;
+    border-radius: 50%;
+}
+.list{
+    overflow: hidden;
+    border-bottom: 1px solid #DDD8CE;
+}
+.list .txt{
+    font-size:.24rem;
+}
+.list li{
+    padding-top:0.2rem;
+    float: left;
+    width:20%;
+    text-align: center;
+}
+.like{
+    padding-left: 0.2rem;
+}
+.like-list{
+    margin-top: 12px;
+}
+.like-list li{
+    border-bottom: 1px solid #DDD8CE;
+    display: flex;
+}
+.like-list li img{
+    width:1.8rem;
+    height:1.8rem;
+}
+.like-list .like-intro{
+    flex: 1;
+    margin-left:0.2rem;
+}
+.like-intro span{
+    color:red;
+}
+.title{
+    padding-top: .1rem;
+    margin-bottom: .12rem;
+    font-size: .3rem;
+    font-weight: 400;
+    color: #333;
+}
+.title1{
+    display: block;
+    font-size: .24rem;
+    height: .68rem;
+    margin-bottom: .16rem;
+    color: #666;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+.txt {
+    text-align: center;
+    font-size: .24rem;
+    color: #666;}
+    .my{
+        /* display: inline-block; */
+    font-size: .2rem;
+    line-height: 1;
+    height: 1;
+    }
+    .img{
+        height: 115px;
+        /* margin-bottom: 20px; */
+    }
+    img{
+        width: 100%;;
+        height: 100%;
+    }

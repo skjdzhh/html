@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    </div>
+    <script>
+        // var oDiv = document.getElementById('div1');
+        // oDiv.onmousedown = function(e){
+        //     var disX = e.clientX - oDiv.offsetLeft;
+        //     var disY = e.clientY - oDiv.offsetTop;
+
+        //     document.onmousemove = function(e){
+        //         oDiv.style.left = e.clientX - disX +"px";
+        //         oDiv.style.top = e.clientY - disY +"px";
+        //     }
+        //     document.onmouseup= function(){
+        //         document.onmousemove = null;
+        //     }
+        // }
+
+        // var str = 'hello world,hi bilibili';
+
+        // function fn(){
+        //     var result = [];
+        //     var arr = str.split(' ');
+        //     // ['hello','world,hi',bilibili'];
+        //     arr.reverse();
+        //     for(var i=0; i<arr.length;i++){
+        //         var arr1 = arr[i].split(',');
+        //         arr1.reverse();
+        //         var str1 = arr1.join(',');
+        //         result.push(str1);
+        //         // result = [...result,...arr1];
+        //     }
+
+        //     console.log( result.join(' ') );
+        //     // console.log(result);
+        // }
+
+        var str = "12345abc"
+        var str1 = str.replace(/(\d+)/,'"$1" ') ;
+
+        console.log(str1);
+// fn();
+    </script>
+</body>
+</html>

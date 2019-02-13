@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* li{
+
+        }
+        li[id] */
+
+        /* ul li:first-child{
+            background: red;
+        } */
+    
+        p{
+            display: none;
+        }
+    </style>
+   
+</head>
+<body>
+    <ul>
+        <li id="xx"><span>fghj</span>111</li>
+        <li class="aa"><span>cccc</span>2</li>
+        <li class="aac">333</li>
+        <li class="bb">3</li>
+        <li class="aa-c">4</li>
+        <li class="aa bb cc">5</li>
+        <li class="aabbcc"></li>
+        <li class="a bb"></li>
+    </ul>
+    <div class="aa">
+        <p>ddddddddd</p>
+    </div>
+
+    <button>click</button>
+    <input type="button" id="btn" value="click">
+
+    <input type="checkbox" name="school"> 唯创
+    <input type="checkbox" name="school" checked="true"> 黑大
+    <input type="checkbox" name="school"> 理工
+
+    <input type="hidden" name="">
+
+    <input type="file">
+
+    <select id="sel">
+        <option value="heida">黑大</option>
+        <option value="heida">理工</option>
+        <option value="heida">林大</option>
+    </select>
+
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        // $("li").css('background','red');
+
+        //$("li").css("background","red")
+        
+
+        // $("ul .aa").css('background','green');
+
+        // $("li,div").css('color','purple');
+    //凡是字符当然要用引号引住才行
+
+        // ul li
+        // ul > li
+
+        // $('.xx ~ li').css('background','green');
+
+        // $('li[class^="b"]').css('background','green');
+        // $('li[class$="c"]').css('background','green');
+        // $('li[class*="a"]').css('background','green');
+
+        // $('li[class|="aa"]').css('background','green');
+        // $('li[class~="bb"]').css('background','green');
+
+        // $("ul li :first-child").css('background','green');
+
+
+        // $('ul:only-of-type').css('background','green');
+
+
+        // $('li:eq(5)').css('background','green');
+        // $('li:even').css('background','green');
+        // $('li:first').css('background','green');
+        // $('li:gt(2)').css('background','green');
+        // $('li:not(".aa")').css('background','green');
+
+
+
+        // $("li:contains('1')").css('background','green');
+        
+        // $('li:empty').css('background','green');
+
+        // $('li:has("span")').css('background','green');
+
+        // $('li:parent').css('background','green');
+
+        // $('p:hidden').css('display',"block");
+        
+        // $(':button')
+
+        // $(":checkbox")
+
+        // $("#btn").on('click',function(){
+        //     $(":checked").prop("checked",false);
+        // })
+
+        // $('input')
+        // $(':input')
+
+        $('#btn').on('click',function(){
+           console.log( $('option:selected').html() );
+        });
+
+    </script>
+
+        
+
+    
+</body>
+</html>

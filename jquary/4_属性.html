@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="aa">
+        dfghjkl;/
+    </div>
+    <input type="checkbox" name="ball">足球
+    <input type="checkbox" name="ball">篮球
+    <input type="checkbox" name="ball">乒乓球
+    <input type="checkbox" name="ball">羽毛
+    <button id="all">全选</button>
+    <button id="unAll">全不选</button>
+    <button id="btn">反选</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        // console.log( $('#div1').attr('class') );
+            // attr普通属性
+            $("#div1").attr("class") 
+        // $('#div1').attr('class','bb');
+            // prop 特性
+        // $('#div1').prop('class','bb');
+
+        //具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()
+        
+        $('#all').on('click',function(){
+            $(':checkbox').prop("checked",true);
+        })
+        $('#unAll').on('click',function(){
+            $(':checkbox').prop("checked",false);
+        })
+        $('#btn').on('click',function(){
+            // 
+            $(':checkbox').each(function(index,elem){
+                /*
+                    index 索引
+                    elem 原生element
+                */
+                elem.checked = !elem.checked;
+                // $(elem).prop("checked",!$(elem).prop("checked"))
+            })
+        })
+        // removeAttr() 移除属性
+        $('#div1').removeAttr('class');
+
+            //value就是输入框的value值
+            //defaultvalue  输入框的默认值
+        $("#text").on("blur".function(){
+
+        })
+        $
+
+        
+
+        
+
+
+
+    
+    
+    </script>
+</body>
+</html>

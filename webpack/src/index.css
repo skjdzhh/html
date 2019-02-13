@@ -1,0 +1,11 @@
+#div1{
+    /* background: red; */
+    height: 500px;
+    width:500px;
+}
+#div2{
+    background: green;
+    width: 200px;
+    height: 200px;
+    background-image: url('./img/ming.jpg');
+}

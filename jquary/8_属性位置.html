@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         #div0{
+             position: relative;
+         }
+         #div1{
+             height: 400px;
+             width: 400px;
+             background: blue;
+             top: 200px;
+             left: 300px;
+             position: absolute;
+         }
+         body{
+             height: 800px;
+         }
+    </style>
+</head>
+<body >
+    <div id="div0">
+        <div id="div1">fghjklghj</div>
+    </div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    console.log($("#div1").offset().left);
+    console.log($("#div1").position());
+    console.log($("#div1").offsetParent());    //最近已经定位的祖先元素
+    $(window).on("scroll",function(){
+        console.log( $(window).scrollTop() );       
+    })
+</script>
+</html>
+
+
+
+
+
+
+
+
+

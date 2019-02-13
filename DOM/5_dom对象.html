@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+<!-- DOM(Document Object Model)——文档对象模型  -->
+    <div id="div1" class="a">
+        dfcghvbj
+    </div>
+    <ul>
+        <li>111</li>
+        <li class="a b">222</li>
+        <li>111</li>
+        <li class="a">222</li>
+    </ul>
+    <script>
+
+
+        // 获取元素常用方法
+        // 1. document.getElementById() 通过id 获取元素 返回查找的dom对象
+        var oDiv = document.getElementById('div1');
+        oDiv.style.color = "yellow";
+         //2.document.getElementsByTagName() 通过标签获取元素 返回数组 数组中存放的是DOM对象
+        // var aLi = document.getElementsByTagName('li');
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].style.background = "blue";
+        // }
+        //3.document.getElementsByClassName()  通过class名获取元素 返回数组 数组中存放的是DOM对象
+        // dom3
+        // var a1 = document.getElementsByClassName('a'); 
+            
+        // for(var i=0; i<a1.length; i++){
+        //     a1[i].style.background = "purple";
+        // } 
+    
+        //getElementsByClass方法 返回所有class名为 a 的元素数组  
+        function getElementsByClass(clsName){
+            var result = [];
+            // 取到页面中所有的元素
+            var allELe = document.getElementsByTagName("*");
+            //循环每一个元素
+            for(var i=0; i<allELe.length; i++){
+                // class  是保留字   用className取到class名 
+                //"a b c" == ["a","b","c"] 通过split方法将字符串分隔成数组 
+                var arr  = allELe[i].className.split(" "); //["a","b","c"]
+                for(var k=0; k<arr.length; k++){
+                    if(arr[k] == clsName){
+                        //判断class名 == 传进来的clsName push到数组
+                        result.push(allELe[i]);
+                    }
+                }
+            }
+            return result;
+        } 
+        //返回所有class名 为a的元素数组
+        var a2 =  getElementsByClass('a') ;
+        for(var j=0; j<a2.length; j++){
+            a2[j].style.background = "pink";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+    
+    
+    </script>
+    
+</body>
+</html>

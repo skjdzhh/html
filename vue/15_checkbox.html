@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12_checkbox.html</title>
+</head>
+<body>
+    <div id="app">
+        是否勾选<input type="checkbox" v-model="ischecked" value="xxx">    
+        <!-- 那个元素v-model,那么那个元素的状态就跟data中数据的值同步 -->
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        ul:'#app',
+        data:{
+            ischecked:false
+        }
+    })
+</script>
+</html>

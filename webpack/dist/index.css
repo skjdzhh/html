@@ -1,0 +1,13 @@
+#div1{
+    /* background: red; */
+    height: 500px;
+    width:500px;
+}
+#div2{
+    background: green;
+    width: 200px;
+    height: 200px;
+    background-image: url(imgs/c7191f7b1d5ed25adb39609ebd187adb.jpg);
+}
+#div1 {
+  background: red; }

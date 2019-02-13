@@ -4,45 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>3_css语法</title>
     <style>
-        #div1{
-            height: 200px;
-            color: red;
-            /* background-color: aliceblue;
-            background-image: url(ming.jpg);
-            background-repeat: no-repeat;
-            background-position: left left; */
-            background: yellow url(ming.jpg) no-repeat 50% 50%;
-            #div2{
-            background: #f00;
-            /* 文本水平对齐方式 */
-            text-align: right;
-            /* 单行文字垂直居中  行高=高度 */
-            height:100px;
-            line-height: 100px;
+        body{
+            height: 3000px;
         }
+        #div1{
+            height: 500px;
+            background: yellow url(../image/ddd.jpg) no-repeat 50% 50%;
+            /* 先水平后垂直 
+            background-image:url(../image/ddd.jpg);
+            background-position：
+            */
+
+        }
+        #div2{
+            height: 100px;
+            line-height: 100px;
+            background: red;
+            /* 文本对齐方式 */
+            text-align: right;
+            /*文字水平居中 */
+        }
+        a{
+            text-decoration: line-through;
+            
+            /* line-through表示横线贯穿文字 */
+        }
+        /* a的颜色变化不明显 */
+        a:hover{
+            color: yellow;
+        }
+        a:link{
+            color:red;
+        }
+        a:active{
+            color:green;
+        }
+       
     </style>
-    
 </head>
 <body>
-    <div id="div1">
-        dfghjk
-    </div>
-    <div id="div2">
-        123489875
-    </div>
-    <div id="div3">
-        hahhahahhahhahh
-    </div>
-    <a href="#">
-        百度
-    </a>
+    <div id="div1">ghsakhfkjksdajhjhfjksda</div>
+    <div id="div2">哈哈哈哈哈  hahhahahhahhahhahhahahhahhahhahahhahhahahhahhahahhaahhahahahahahhahahhahahhahahhahahhahahhahhahahhahahahhahahhahhhahhahahhahhahahhahhahhahahhahahhahahhahhahahhahahhahahhahahhahahhahahahahahhahahhahah</div>
+    <a href="#">11111阿里11111</a>
+
+    <!-- 属性：红黄绿蓝黑 -->
+    <div id="div3">hehehheheheheh       hehehehehhehehehhe </div>
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈       哈哈哈哈哈哈哈哈哈哈哈哈哈哈
     <ul>
         <li>1</li>
         <li>2</li>
         <li>3</li>
     </ul>
-    
+    <p>哈哈哈哈哈哈哈回复</p>
 </body>
 </html>

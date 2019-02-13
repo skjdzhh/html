@@ -5,18 +5,169 @@
 ul{
     list-style: none;
 }
-
-/* inline/inline-block  通过设置父元素的text-align:center */
+a{
+    text-decoration: none;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 
+    inline/inline-block  水平居中通过设置父元素的text-align:center
+    block  水平居中设置自己的 margin:0 auto;
+*/
 /* banner开始 */
 .banner{
     text-align: center;
     background:#ff2f7c;
-} 
+}
 .banner img{
     display: block;
     margin:0 auto;
 }
-
-
+.banner1{
+    display: block;
+    height: 80px;
+    background:#ff2f7c url(../images/banner.jpg) no-repeat center 0;
+}
 
 /* banner结束 */
+/* header开始 */
+#header{
+    background: #f2f2f2;
+    height: 40px;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.30);
+    margin-bottom:5px;
+}
+.wrapper{
+    width: 1230px;
+    margin:0 auto;
+}
+.header-login{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    float: left;
+}
+.header-login span,.header-login a{
+    color:#999;
+}
+.header-login a{
+    padding-left:20px; 
+}
+.header-login a:hover{
+    color: #FF0036;
+}
+.header-list{
+    float:right;
+}
+.header-list>li{
+    float:left;
+    position: relative;
+}
+.header-list>li>a{
+    color: #999;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px 0 20px;
+}
+.icon-gouwucheman,.icon-shouji{
+    color:#ff0036;
+    font-size: 14px;
+}
+/* .list-menu>a:hover{
+    background: #fff;
+    text-decoration: underline;
+    color: #ff0036;
+} */
+.header-list .list-menu{
+    position: relative;
+}
+.list-menu:hover > a{
+    background: #fff;
+    color: #ff0036;
+}
+.list-menu>a:hover{
+    text-decoration: underline;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border:3px solid transparent;
+    border-top-color:#999;
+    position: absolute;
+    right:7px;
+    top:20px;
+    transition: transform 0.2s ease ;
+}
+.header-list .list-menu:hover .arrow{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+.list-menu-no:hover > a{
+    color: #999;
+}
+.sub-list{
+    position: absolute;
+    left:0;
+    top:40px;
+    background: #fff;
+    border:1px solid #eee;
+    border-top:none;
+    padding: 10px 15px;
+    width: 74px;
+    line-height: 30px;
+    display: none;
+
+}
+.sub-list a{
+    color: #999;
+}
+.sub-list a:hover{
+    color: #ff0036;
+    text-decoration: underline;
+}
+.header-list .list-menu:hover .sub-list{
+    display: block;
+}
+.sub-qr{
+    position: absolute;
+    left:-39px;
+    top:29px;
+    box-shadow:0 0 2px 2px rgba(0,0,0,0.15);
+    display: none;
+}
+.sub-qr::after{
+    content:'';
+    width:0;
+    height: 0;
+    border:4px solid transparent;
+    border-bottom-color:#fff;
+    position: absolute;
+    left:50%;
+    top:-8px;
+    margin-left:-4px;
+}
+.list-tel:hover .sub-qr{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*header结束 */

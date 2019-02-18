@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>lianxi</title>
+    <title>v-for</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <ul>
+            <li v-for="obj in stuList">
+                {{obj}}
+            </li>
+        </ul>
+    </div>
 </body>
-</html>
 <script src="vue.js"></script>
 <script>
     var vm = new Vue({
         el:"#app",
         data:{
-            msg:"HelloWorld"
+            stuList:[1,2,3]
         },
         methods: {
             say(){
-            <!-- <console class="l"></console> -->
-            <!-- <console class="log"></console/ -->
-                console.log(this.msg);
-                return 111;
+                console.log( this.stuList);
+                return "数组";
             }
-        }
+        },
     })
     vm.say();
     console.log(vm.say());
 </script>
+</html>

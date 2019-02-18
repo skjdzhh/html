@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div id="header">
-            首页
-        </div>
+        图片
     </div>
 </template>
 
@@ -13,5 +11,5 @@
 </script>
 
 <style scoped>
-    
+
 </style>

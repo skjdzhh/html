@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>v-html</title>
+    <title>v-on</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" >
+        <!-- vue中绑定点击事件的方法 -->
+        <button @click="count++">count++</button>
+        <button @click="say()">say</button>
+        <button @click="doSoth()">do</button>
+        <button @click="add(2)">add(2)</button>
         {{count}}
-        <button @click="add(2)">click +2</button>
-        <button v-on:click="add(3)">click +3</button>
     </div>
-    <script src="vue.js"></script>
-    <script>
-        var vm = new Vue({
-            el:'#app',
-            data:{
-                count:0
-            },
-            methods: {
-                add(num){
-                    // 通过this.count访问data 下的属性
-                    this.count+=num;
-                }
-            }
-        })
-    
-    
-    </script>
-    
 </body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            count:1,
+            data1:["sss","kkk","hhh","yyy","ttt"]
+        },
+        methods: {
+            say(){
+                console.log("说出data中的数据为"+this.data1);
+            },
+            doSoth(){
+                console.log("这是一个做的动作");
+            },
+            add(num){
+                this.count += num;
+            }
+        },
+    })
+    // 在vue中do是关键字
+    // vm.say();
+    // vm.do();
+</script>
 </html>

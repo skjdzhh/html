@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>v-for</title>
+    <title>lianxi</title>
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="obj in stuList">
-                {{obj}}
-            </li>
-        </ul>
+        <button @click="say()">say</button>
+        <button @click="doSome()">doSome</button>
+        <button @click="count++">count++</button>
+        <button @click="add(2)">count+2</button>
+        {{count}}
     </div>
 </body>
 <script src="vue.js"></script>
@@ -20,16 +20,20 @@
     var vm = new Vue({
         el:"#app",
         data:{
-            stuList:[1,2,3]
+            data1:["aaa","sss","ddd","fff"],
+            count:1
         },
         methods: {
             say(){
-                console.log( this.stuList);
-                return "数组";
+                console.log("data1里面的数据为"+this.data1);
+            },
+            doSome(){
+                console.log("只是一个do的动作");
+            },
+            add(num){
+                this.count +=num;
             }
         },
     })
-    vm.say();
-    console.log(vm.say());
 </script>
 </html>

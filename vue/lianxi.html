@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>lianxi</title>
+    <title>v-html</title>
+    <style>
+    #div1{
+        width: 200px;
+        height: 200px;
+        background: #ff0000;
+    }
+    #div2{
+        width: 100px;
+        height: 100px;
+        background: #0000ff;
+    }
+    </style>
 </head>
 <body>
     <div id="app">
-        <button @click="say()">say</button>
-        <button @click="doSome()">doSome</button>
-        <button @click="count++">count++</button>
-        <button @click="add(2)">count+2</button>
-        {{count}}
+        <div id="div1" @click="change1()">
+            <!-- @click.stop  修饰符  阻止事件冒泡  -->
+            <!-- @click.prevent  修饰符  阻止默认行为  -->
+            <div id="div2" @click.stop="change2()">hhh</div>
+        </div>
     </div>
-</body>
-<script src="vue.js"></script>
-<script>
-    var vm = new Vue({
-        el:"#app",
-        data:{
-            data1:["aaa","sss","ddd","fff"],
-            count:1
-        },
-        methods: {
-            say(){
-                console.log("data1里面的数据为"+this.data1);
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                
             },
-            doSome(){
-                console.log("只是一个do的动作");
-            },
-            add(num){
-                this.count +=num;
+            methods: {
+                change1(){
+                    console.log('div1 111');
+                },
+                change2(){
+                    // event.stopPropagation();
+                    console.log('div2 222');
+                }
             }
-        },
-    })
-</script>
+        })
+    
+       
+    
+    </script>
+    
+</body>
 </html>

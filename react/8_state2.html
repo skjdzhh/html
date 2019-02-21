@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+    // 1.state 是一个对象 可以存储多个值
+    // 2.取state   this.state.num 
+    // 3.修改state   setState() 自定义的方法中this undefined
+        class Count extends React.Component{ 
+            constructor(params) {
+                super(params),
+                this.state = {
+                    num :2
+                }
+            }
+            addHandle(){
+                this.setState({
+                    num:++this.state.num
+                });
+            }
+            render(){
+                return (
+                    <div>
+                        <h1>{this.state.num}</h1>
+                        <button onClick={this.addHandle.bind(this)}>add</button>
+                    </div>
+                    )
+            }
+        } 
+        ReactDOM.render(
+            <Count></Count>,
+            document.getElementById('root')
+        )
+        
+// 属性  主体  方法  ReactDOM
+    </script>
+</body>
+
+</html>

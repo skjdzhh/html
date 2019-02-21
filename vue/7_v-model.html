@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-modle</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-model="msg">
+                <!-- v-mmodel:双项数据绑定 -->
+                <!-- 按钮的默认选择属性 checked -->
+                <!-- 当是单选框时，v-model也有name属性相同的属性，即当v-model的值相同时这两个单选框不能被同时选中 -->
+        <input type="radio" v-model="sex" value="boy">boy
+        <input type="radio" v-model="sex" value="girl">girl
+    </br>
+        <input type="checkbox" v-model="hobby" value="吃饭">吃饭
+        <input type="checkbox" v-model="hobby" value="睡觉">睡觉
+        <input type="checkbox" v-model="hobby" value="敲代码">敲代码
+    </br>
+       <select v-model="school" id="">
+           <option value="黑大">黑大</option>
+           <option value="理工">理工</option>
+           <option value="林大">林大</option>
+       </select>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:'aaa',
+                sex:'girl',
+                hobby:["吃饭","睡觉"],
+                school:"理工"
+        }
+    })
+    /* v-model对于按钮的作用：
+    1、双向数据更新
+    2、对于单选框有name的作用
+    3、当v-model的值等于哪个按钮value的值则哪个value是被选中的
+    */
+</script>
+</html>

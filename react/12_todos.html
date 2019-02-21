@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+    class Add extends React.Component{
+        constructor(params){
+               super(params);
+               
+            //    bind改变的是方法里面的this
+               this.addAdd = this.addAdd.bind(this);
+           }
+           addAdd(){
+               if(this.myInput.value){
+                   this.props.addMain(this.myInput.value);
+               // qingkonginputdevalue
+                   this.myInput.value = "  ";
+               }
+            
+           }
+           render(){
+               return(
+                   <div>
+                        <input type="text" ref={input=>{this.myInput = input}}></input>
+                        <button onClick={this.addAdd} >add</button>
+                   </div>
+               )
+           }
+       }
+    class List extends React.Component{
+           render(){
+               return(
+                   
+                        <ul>
+                            {
+                                this.props.todos.map(function(val,index){
+                                return <li key={index}>{val}</li>
+                            })
+                            }
+                            
+                        </ul>
+                   
+               )
+           }
+       }
+       class Main extends React.Component{
+           constructor(params){
+               super(params);
+               this.state = {
+                    todos:['吃饭','睡觉','打豆豆']
+               };
+            //    bind改变的是方法里面的this
+               this.addMain = this.addMain.bind(this);
+           }
+           addMain(vv){
+               console.log("addMain被调用了"+vv);
+               let arr = [...this.state.todos];
+               arr.push(vv);
+               this.setState({
+                    todos:arr
+               });
+           }
+        //    ref  取元素
+        //    父组件传值到子组件用props
+           render(){
+               return(
+                   <div>
+                        <h1>标题</h1>
+                        <Add addMain={this.addMain}></Add>
+                        <List todos={this.state.todos}></List>
+                   </div>
+               )
+           }
+       }
+       ReactDOM.render(<Main></Main>,document.getElementById('root'));
+    </script>
+</body>
+</html>

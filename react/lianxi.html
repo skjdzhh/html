@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+    class Jiang1 extends React.Component{
+        constructor(params){
+               super(params);
+               
+            //    bind改变的是方法里面的this
+            //   this.addAdd = this.addAdd.bind(this);
+               this.state = {
+                   num1:50
+               }
+               this.DD1 = this.DD1.bind(this);
+           }
+        //    addAdd(){
+        //        if(this.myInput.value){
+        //            this.props.addMain(this.myInput.value);
+               // qingkonginputdevalue
+        //            this.myInput.value = "  ";
+        //        }
+            
+        //    }
+        DD1(){
+            
+
+            if(this.props.num>20)
+               {
+                   this.setState({
+                num1:this.state.num1+20
+               });
+            this.props.Min(20);
+               }
+               else alert("士兵数量不足！！！");
+        }
+           render(){
+               return(
+                   <div>
+                       <h3>jiang1有士兵数{this.state.num1}</h3>
+                       <button onClick ={this.DD1}>调兵</button>
+                   </div>
+               )
+           }
+       }
+    class Jiang2 extends React.Component{
+        constructor(params){
+               super(params);
+               
+            //    bind改变的是方法里面的this
+            //   this.addAdd = this.addAdd.bind(this);
+               this.state = {
+                   num2:50
+               };
+               this.DD2 = this.DD2.bind(this);
+           }
+           DD2(){
+               if(this.props.num>20)
+               {
+                    this.setState({
+                num2:this.state.num2+30
+               });
+               this.props.Min(30);
+               }
+               else alert("士兵数量不足！！！");
+              
+            
+           }
+           render(){
+               return(
+                   
+                   <div>
+                       <h3>jiang2有士兵数{this.state.num2}</h3>
+                       <button onClick ={this.DD2}>调兵</button>
+                   </div>
+                   
+               )
+           }
+       }
+       class Main extends React.Component{
+           constructor(params){
+               super(params);
+               this.state = {
+                    num:500
+               };
+            //    bind改变的是方法里面的this
+             this.Min = this.Min.bind(this); 
+           }
+        //    addMain(vv){
+        //        console.log("addMain被调用了"+vv);
+        //        let arr = [...this.state.todos];
+        //        arr.push(vv);
+        //        this.setState({
+        //             todos:arr
+        //        });
+        //    }
+        //    ref  取元素
+        //    父组件传值到子组件用props
+        Min(num0){
+            this.setState({
+                num:this.state.num-num0
+               });
+            }
+           render(){
+               return(
+                   <div>
+                        <h1>士兵剩余士兵数量{this.state.num}</h1>
+                        <Jiang1 Min={this.Min} num={this.state.num}></Jiang1>
+                        <Jiang2 Min={this.Min} num={this.state.num}></Jiang2>
+                   </div>
+               )
+           }
+       }
+       ReactDOM.render(<Main></Main>,document.getElementById('root'));
+    </script>
+</body>
+</html>

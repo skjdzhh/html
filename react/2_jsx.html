@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>lianxi</title>
 </head>
-
 <body>
-    <div id="div1">
-
-    </div>
-    <script src="react.development.js"></script>
-    <script src="react-dom.development.js"></script>
-    <script src="browser.min.js"></script>
-    <script type="text/babel">
-        let elem = (
-        <div>
-            <div>
-                <h1>22222222</h1>
-            </div>
-            <div>
-                <h2>1111111</h2>
-                <p>唯创666</p>
-            </div>
-        </div>
-
-        ); 
-        ReactDOM.render(elem,document.getElementById('div1'));
-    
-
-
-    </script>
-
+    <div id="root"></div>
 </body>
-
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    let d =(<div>
+        这是一个div
+        <ul>
+            这是一个ul
+            <li>
+                <h1>h1标签</h1>
+            </li>
+        </ul>
+    </div>);
+    // 千万别忘了document
+    ReactDOM.render(d,document.getElementById('root'));
+</script>
 </html>

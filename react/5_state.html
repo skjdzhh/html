@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>class组件小练习</title>
 </head>
 <body>
-    
+    <div id="root"></div>
 </body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Welcome extends React.Component{
+        constructor(params){
+            super(params);
+            this.state = {
+                num:1
+            };
+            this.add = this.add.bind(this);
+        }
+        add(){
+            this.setState({
+                num:this.state.num+2
+            });
+        }
+        render(){
+            // return里面只能有一个根元素
+            // 在return里面写属性值时要用大括号
+            return(
+                <div>
+                    <h2>{this.state.num}</h2>
+                    <button onClick={this.add}>num+2</button>
+                    </div>
+            )
+        }
+    }
+    //**    一定要加上document.
+    ReactDOM.render(<Welcome></Welcome>,document.getElementById('root'));
+</script>
 </html>

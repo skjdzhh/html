@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" @keyup="filter()" >
+        <button @click="add()">add</button>
+        <ul>
+            <!-- val 数组中的元素   index 代表索引 -->
+            <li v-for="(obj,index) in showList" :class="{active:obj.isA}" @click="change(obj)">
+                {{obj.val}}
+                <button @click="del(index)">del</button>
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                list: {
+                    val:'a',
+                    isA:false
+                },
+                // 用来显示的数组
+                showList:{
+                    val:'a',
+                    isA:false
+                },
+                msg: ''
+            },
+            methods: {
+                add() {
+                    this.list.push({
+                        val: this.msg,
+                        isA: false
+                    });
+                    this.msg = "";
+                    this.showList = [...this.list];
+                },
+                del(index) {
+                    // 1 从哪开始删除  删除多少个  
+                    this.list.splice(index, 1);
+                    this.showList = [...this.list];
+                },
+                change(obj) {
+                    obj.isA = !obj.isA;
+                },
+                filter(){
+                    // 过滤的时候不能直接修改原数组 所以弄一个showList   过滤list数组中val 中包含 this.msg的 
+                    var arr = this.list.filter((obj) => {
+                        // console.log(obj.val.includes(this.msg));
+                        return obj.val.includes(this.msg);
+                    })
+                    this.showList = arr;
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

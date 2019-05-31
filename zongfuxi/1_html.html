@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 此在div的里边添加内容，伪元素是一个行元素 */
+        *{
+            padding: 0;
+            margin: 0;
+        } 
+        body{
+            height: 3000px;
+        }
+        div::after{        
+            /* 伪元素必须要有一个属性代表内容 ,伪元素默为行元素*/
+            content:"哈哈哈";
+            display: block;
+        } 
+
+
+        div:hover{
+            background: green;
+         }
+        div[id = "ii"]{
+            /* !important加在样式的后面 */
+            background: red!important; 
+            background: red!important;  
+        }
+        
+        /* h1
+            position: sticky;
+            top:30px;
+        } */
+    </style>
+</head>
+<body>
+
+    
+    <!--a span i strong em       
+        行级元素  水平分布，多个占一行，不可以设置宽高   
+        a span i(斜体) strong(加粗) em(斜体)
+        块级元素  垂直分布 自己占一行  可以设置宽高
+        div p ul li h1-h6 table  
+        行级块元素:既可以放在一行，又可以设置宽和高
+        img  button
+
+    
+        2、html的语义化好处
+        方便别人阅读，方便维护
+        方便搜素引擎优化
+        ...
+       
+        
+
+
+
+
+     -->
+     <!-- 
+        1、css选择器
+            id选择器   
+            class选择器  
+            标签选择器
+            后代新选择器div p   
+            子代选择器div>p
+            伪类选择器 :hover
+            伪元素选择器::after
+            群组选择器 div,p
+            属性选择器 div[id](选中有id的div)
+
+             
+        2、css优先级
+       
+            注：伪类的优先级和class一样   伪元素的优先级和标签一样
+
+            !important 
+            style    内联样式 1000
+            id       100
+            class    10
+            标签      1 
+
+        3、position
+            absolute 
+                绝对定位  定位后空间释放   现对于最近已经定位的祖先元素
+            relative   
+                相对定位   定位后空间不释放    相对于自己初始的位置
+            fixed
+                固定定位   定位后空间释放，相对于浏览器的可视窗口
+            static
+                默认的定位
+            sticky
+                粘性定位  吸顶效果    
+
+        4、浮动
+            float：left  right 
+            浮动元素特点：脱离文档流 空间释放，另外，浮动的元素的宽和高是由内容撑的
+ 
+            浮动：浮动元素的特点：脱离文档流  ，空间释放      浮动元素的宽和高是由内容撑的
+            
+
+
+            浮动带来问题：
+                子元素浮动，父元素高度塌陷 
+                    解决办法：
+                        1、给父元素加上高度
+                        2、overflow:hidden在父元素中;    //触发BFC 内部的空间是一个独立的区域，浮动的元素也会计算高度
+                        3、在这两个浮动的元素的下面加上一个清除浮动的兄弟元素（也可以通过伪类的方式实现
+                        （用伪类虚拟出来一个元素））
+                        classfix::after{
+                            content:"hjkjhjk";    //没有content属性伪元素是不会出来的
+                            display:block;
+                            clear:both;
+
+                        }
+                        当用after时，肯定要在后面的元素加上content属性
+
+
+                        在这两个元素的下面加上一个清除浮动的兄弟元素   兄弟元素    兄弟元素
+                        向元素    兄弟 兄弟  
+             
+            
+            
+            
+            
+            一般伪元素加两个:,其实一个:也好使，只不过是为了区分伪类
+      -->
+        <div>uuu</div>
+        <div id="gg">fghjkl;';lkjhg</div>
+        <div id="ii">ghjkl;lkjh</div>
+        <!-- 内联样式在样式之间y用分号分割开 -->
+        <div style="height:200px;background:blue"></div>
+</body>
+</html>

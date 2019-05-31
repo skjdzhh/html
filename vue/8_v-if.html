@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> v-if</title>
+</head>
+<body>
+    <div id="root">
+        <div v-if = "a">哈哈</div>   <!-- 当v-if的值为"true"时，显示该标签-->
+        <div v-else>呵呵</div>       <!-- 否则显示v-else这个标签（v-if和v-else是一对，必须成对出现）-->
+        <h1 v-if = "a">v-if</h1>
+        <h1 v-else-if = "a">v-else-if</h1>
+        <h1 v-else> v-else</h1>
+    </div>
+</body> 
+<script src = "vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#root",
+        data:{
+            a:true,                //v-model,v-if,v-else,v-show都是自带"""双引号的
+        }
+    })
+</script>
+</html>

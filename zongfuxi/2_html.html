@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        height: 3000px;
+    }
+    #div1{
+        width: 200px;
+        height: 200px;
+        background: red;
+        padding: 200px;
+        border:20px solid green; 
+        box-sizing: border-box;
+    }
+    #div2{
+        width: 300px;
+        height: 300px;
+        background: red;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    #div3{
+        margin-bottom: 30px;
+        width: 20px;
+        height: 20px;
+        background: green;
+    }
+    #div4{
+        height: 300px;
+        width: 300px;
+        background: yellow;
+        margin-top: 0px;
+
+    }
+    </style>
+</head>
+<body>
+    
+    <!-- css盒模型   内容 content + padding + border + margin
+    1、标准盒模型 标准浏览器   如果要变怪异   border-sizing
+    width:200px 
+    width = content
+    2、怪异盒模型 
+    （ie6以及ie6以下的浏览器不写 doctype会变成怪异盒模型）
+    width:200px; 
+    width = border+padding+content
+    标准和怪异的转换
+    box-sizing:content-box;默认为标准盒模型   content-box   border-box
+    box-siziing:border-box;  变为怪异盒模型
+
+    
+-->
+<!-- 
+11外边距合并（父一个子一个）
+：当有两个相邻的外边距在相同的方向上时，
+合并为外边距较大的那一个 
+问题的解决：1、父元素加上一个overflow:hidden
+           2、父元素加上一个边框 
+           3、父元素或者主元素 浮动或者定位了
+22兄弟元素外边框合并：上面的元素有下边框 下面的元素有上边框是
+两个元素的外边框何冰为较大的那一个
+
+
+
+ -->
+
+<!-- <div id="div1">hhfhhfhfhfhhhfhfhhfhh</div> -->
+<div id="div2">
+    <div id="div3"></div>
+</div>
+<div id="div4"></div>
+</body>
+</html>

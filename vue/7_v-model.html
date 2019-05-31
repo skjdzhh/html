@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>v-modle</title>
+    <title>v-model</title>
 </head>
 <body>
-
     <div id="app">
         <input type="text" v-model="msg">
-                <!-- v-mmodel:双项数据绑定 -->
+                <!-- v-model:双项数据绑定 -->
                 <!-- 按钮的默认选择属性 checked -->
                 <!-- 当是单选框时，v-model也有name属性相同的属性，即当v-model的值相同时这两个单选框不能被同时选中 -->
+               
         <input type="radio" v-model="sex" value="boy">boy
         <input type="radio" v-model="sex" value="girl">girl
     </br>
@@ -38,10 +38,15 @@
                 school:"理工"
         }
     })
+    
+
     /* v-model对于按钮的作用：
     1、双向数据更新
     2、对于单选框有name的作用
     3、当v-model的值等于哪个按钮value的值则哪个value是被选中的
     */
+
+    
+     
 </script>
 </html>

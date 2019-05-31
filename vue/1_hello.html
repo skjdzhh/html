@@ -4,33 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>1_hello</title>
+    <title>Hello</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="root"></div>
 </body>
-</html>
-<script src="vue.js"></script>
-<script>
+<script src = "vue.js"></script>
+<script >
     var vm = new Vue({
-        el:"#app",
+        el:"#root",
         data:{
             msg:"hello world"
         },
-        methods:{
-            // say:表示方法的声明 say():表示方法的调用
+        methods: {
             say(){
-
-                // 方法里面可以将对象写成this的
-                 console.log(this.msg);
-                return 111; 
+                console.log(this.msg);
             }
-        }
+        },
     })
-    // 这里的msg是直接可以用vm访问的
     vm.say();
-    console.log(vm.msg);
-
-    //el data methods
-
 </script>
+</html>

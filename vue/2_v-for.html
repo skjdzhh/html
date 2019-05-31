@@ -4,37 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>2_v-for</title>
-
+    <title>v-for</title>
 </head>
 <body>
-    <!-- 一个vue对象只容许有一个挂载元素 -->
-    <div id="app">
+    <div id="root">
         <ul>
-    <!-- v-for的用法：后面的一个参数为data中的数据 -->
-    <!-- 给每一个li绑定数据 -->
-    <!-- 当stuList为12时，{{person}}从1循环到12 -->
             <li v-for = "person in stuList">
-                <!-- 在vue的data中的数据在标签中使用必须要用“{{}}”包含 -->
                 {{person}}
             </li>
         </ul>
-        <div v-html="msg"></div>
     </div>
-    
 </body>
-<script src="vue.js"></script>
+<script src = "vue.js"></script>
 <script>
     var vm = new Vue({
-        el:"#app",
+        el:"#root",
         data:{
-            stuList:['zhangsan','lisi','sunwu']
+            stuList:["jjj","hhhh","hhh"],
         },
-        msg:'<h2>h2标题</h2>'
-    });
+        methods: {
+            speak(){
+                console.log("hhhh");
+            }
+        },
+    })
 </script>
 </html>
-<!-- vue 学习：
-   1、vue的写法(写在script里面)。
-   2、v-for用法：用于给elements绑定数据。
--->

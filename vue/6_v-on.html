@@ -4,35 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>6_v-on</title>
+    <title>Keyup</title>
 </head>
 <body>
-    <div id="app">
-        <button @keyup.enter="fn()">
-            enterUp
-        </button>
+    <div id="root">
+        <!-- <div @keyup.enter="speak()">这是一个按钮</div> -->
+        <input type="text" @keyup.enter = "speak()">
     </div>
 </body>
-<script src="vue.js"></script>
+<script src = "vue.js"></script>
 <script>
     var vm = new Vue({
-        el:"#app",
-        data:{
-            count:123,
-            data1:["hj","hjk","hjk"]
+        el:"#root",
+        data: {
+            msg:"hello world"
         },
         methods: {
-            fn(){
-                console.log(this.data1);
+            speak(){
+                console.log("this.msg");
             }
         },
     })
 </script>
-
-<!-- @keyup.r
-    @keyup.enter
-    @keyup.h
-    @keyup.l
-    @keyup.j
--->
 </html>

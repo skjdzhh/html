@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- React里面调用点击事件用“{}”，非React里面用引号 -->
+    <button onClick ="person1.say()" >say</button>
+    <!-- constructor是构造函数 -->
+</body>
+<script>
+    class Person{
+        // constructor()是构造函数，是每一个类都必须有的
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+
+        }
+        say(){
+            console.log("我的name是"+this.name)
+        }
+    }
+    var person1 = new Person("jiafeimao",200);
+</script>
+</html>

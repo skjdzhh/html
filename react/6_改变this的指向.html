@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>改变this指向</title>
 </head>
 <body>
-    <script>
-        function fn(a,b){
-            console.log(this,a,b);
-        }
+    <div id="root"></div>
+</body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    var obj = {
+        name:"skj",
+        age:22
+    }
+    function fn(a,b){
+        console.log(this+a+b);
+    }
+    fn.bind(obj,"xx","yy")();
+    // call和apply直接调用，bind调用的话还要加上“（）”，但是最call简单
+    // 逗号是不参与输出的
+    fn.call(obj,"ss","uu");
+    fn.apply(obj,["yy","zz"]);
 
-        var obj = {
-            name:'zs'
-        }
-
-        // fn.call(obj,'xx','zz');
-        // fn.apply(obj,['xx','zz']);
-        fn.bind(obj,'xx','zz')();
-
-
-    
-    
-    
-    </script>
-    <!--      -->
-</body> 
+</script>
 </html>

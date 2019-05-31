@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 400px;
+            margin:0 auto;
+        }
+        li{
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            background: green;
+            margin-bottom:10px;
+            padding: 0 20px;
+        }
+        li span{
+            float:right;
+        }
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>商品列表</h2>
+        <ul>
+            <li v-for="obj in proList" :class="{active:obj.isActive}" @click="change(obj)">
+                {{obj.name}}
+                <span>{{obj.price}}</span>
+            </li>
+        </ul>
+        <hr>
+        <h3>
+            total:{{total}}
+        </h3>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                proList:[
+                    {
+                        name:'aaa',
+                        price:111,
+                        isActive:false
+                    },
+                    {
+                        name:'bbb',
+                        price:13,
+                        isActive:false
+                    },
+                    {
+                        name:'ccc',
+                        price:55,
+                        isActive:false
+                    },
+                    {
+                        name:'ddd',
+                        price:78,
+                        isActive:false
+                    },
+                    {
+                        name:'eee',
+                        price:100,
+                        isActive:false
+                    }
+                ]
+                ,
+                total:0
+            },
+            methods:{
+                change(obj){
+                    obj.isActive = !obj.isActive;
+                    if(obj.isActive){
+                        this.total += obj.price;
+                    }else{
+                        this.total -= obj.price;
+                    }
+                }
+                
+            }
+            
+        
+        })
+    
+    
+    
+    </script>
+    
+</body>
+</html>

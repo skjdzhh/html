@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15_闭包1.html</title>
+</head>
+<body>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+</body>
+<script>
+    var aLi = document.getElementsByTagName('li');
+    //当刷新之后所有的事件绑定完成，就差点击标签之后函数执行
+    // for(var i = 0;i<aLi.length;i++){
+    //     aLi[i].onclick = function(){
+    //         //不管此时点击哪一个li，输出的数字一定是3，
+    //         //因为数据在按钮绑定之前就已经被执行了
+    //         console.log(i);
+    //     }
+    // }
+
+    //先绑定后执行，所以不能常规理解
+        // for( var i = 0;i<aLi.length;i++){
+        //     (function(){
+        //         var u = i;
+        //         console.log(u);
+        //         aLi[u].onclick = function(){
+        //             console.log(u);
+        //         }
+
+        //     })();
+        // }
+    
+        //立即执行的好处，将定义和执行不能混合变为可能
+    
+        // for(var i = 0;i<aLi.length;i++){
+        //     (function(i){
+        //         console.log("fghjklkjhgffghjklkjhgffghjklkjhfghjkjhgfghjkjhgfghj");
+        //         console.log(i);
+        //         //闭包就是把这些变量的值都存起来，等到需要在子函数中用的时候对应传递给子函数
+        //         aLi[i].onclick = function(){
+        //             //不管此时点击哪一个li，输出的数字一定是3，
+        //             //因为数据在按钮绑定之前就已经被执行了
+        //             console.log(i);
+        //         }
+        //     })(i);
+        // }
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡.html</title>
+</head>
+<style>
+    #div1{
+        width: 100px;
+        height: 100px;
+        background: #ff0000;
+    }
+    #div2{
+        width: 200px;
+        height: 200px;
+        background: #0000ff;
+    }
+</style>
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+        </div>
+    </div>
+    <a href="http://www.baidu.com" id="btn">baidu</a>
+</body>
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oBtn = document.getElementById('btn');
+    oDiv1.onclick = function(e){
+        console.log("div1  onclilck");
+    }
+    oDiv2.onclick = function(e){
+        console.log("div2   onclick");
+
+        // 阻止事件冒泡
+        e.stopPropagation();
+        // ie   
+        // e.cancleBubble = true;
+    }
+    oBtn.onclick = function(e){
+        console.log("printf btn");
+
+        //阻止默认行为的三种方式
+        return false;
+        // e.preventDefault();
+        // e.returnValue = false;
+}
+   
+
+
+
+</script>
+</html>

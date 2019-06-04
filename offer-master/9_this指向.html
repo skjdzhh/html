@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this指向</title>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+</body>
+<script>
+    function a(){
+        console.log(this);
+    }
+    a();
+    setTimeout(function(){
+        console.log("这是一个定时器");
+    },3000);
+
+    setTimeout(function(){
+        console.log("中国范儿就");
+    },2000);
+
+    //给标签循环绑定事件
+    var aLi = document.getElementsByTagName('li');
+    for(var i = 0 ; i < aLi.length ; i++){
+        aLi[i].onclick = function(){
+            setTimeout(function(){
+                console.log(this);
+            }.bind(this),1000);
+        }
+    }
+    //给点击事件绑定函数时，仅仅只是绑定，，，，，（并没有执行）
+    //函数的执行方式有立即执行和触发执行
+
+    var obj = {
+        name:"hhh"
+    }
+
+    var obj1 = {
+        name:"skj",
+        age:21,
+        say:function(msg,msg1,msg2){
+            console.log(this,msg,msg1,msg2);
+        }
+    }
+    obj1.say("我是obj1","haha","hehe");
+
+    //改变this指向的三种方式
+    //call bind apply只是改变this指向，其他什么都不改变
+    //只有这个对象有的函数它才可以调用，但是是可以改变this指向的
+    obj1.say.call(obj,"我是obj","haha","hehe");
+    obj1.say.apply(obj,["我是obj","haha","hehe"]);
+    obj1.say.bind(obj,"我是obj","haha","hehe")();
+
+</script>
+</html>

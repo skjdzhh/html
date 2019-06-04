@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10_事件.html</title>
+</head>
+<style>
+    #div1{
+        height: 100px;
+        width: 100px;
+        background: #ff0000;
+    }
+    #div2{
+        height: 200px;
+        width: 200px;
+        background: #0000ff;
+    }
+</style>
+<body>
+   <div id="div1">
+       div1
+       <div id="div2">
+        div2
+       </div>
+   </div>
+   <!-- 事件   事件处理函数    事件源 -->
+</body>
+<script>
+var oDiv1 = document.getElementById('div1');
+oDiv1.onclick = function(e){
+    console.log("hjkjhjkl");
+
+    //输出事件源  
+    //点击谁触发，谁就是事件源   
+    console.log(e.target);
+  
+    //输出this 对当前对象的引用
+    console.log(this);
+}
+
+//仅仅函数不是事件，是没有·事件源的
+function q(e){
+    console.log(e.target);
+}
+q();
+</script>
+</html>
